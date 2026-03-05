@@ -1,76 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="pt-br">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Serviços - Integralis Soluções</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Serviços • Integralis Soluções</title>
 
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:," />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brandMark" aria-hidden="true"></span>
+        <span class="brandText">
+          <strong>INTEGRALIS</strong> <span>SOLUÇÕES</span>
+        </span>
+      </a>
 
-<header>
-
-<div class="container nav">
-
-<div class="logo">
-INTEGRALIS <span>SOLUÇÕES</span>
+```
+  <nav class="menu" aria-label="Menu">
+    <a class="menuLink" href="index.html">Início</a>
+    <a class="menuLink" href="sobre.html">Sobre</a>
+    <a class="menuLink isActive" href="servicos.html">Serviços</a>
+    <a class="menuLink" href="portfolio.html">Portfólio</a>
+    <a class="menuBtn" href="contato.html">Contato</a>
+  </nav>
 </div>
+```
 
-<nav>
-<a href="index.html">Início</a>
-<a href="sobre.html">Sobre</a>
-<a href="servicos.html">Serviços</a>
-<a href="portfolio.html">Portfólio</a>
-<a href="contato.html" class="btn">Contato</a>
-</nav>
+  </header>
 
-</div>
+  <main>
+    <section class="pageHero">
+      <div class="container">
+        <h1 class="pageTitle">Serviços</h1>
+        <p class="pageSubtitle">
+          Soluções SaaS e sistemas web para sua operação funcionar melhor.
+        </p>
+      </div>
+    </section>
 
-</header>
+```
+<section class="section">
+  <div class="container">
+    <div class="grid2">
+      <article class="card">
+        <h3>Desenvolvimento de Sistemas</h3>
+        <p>Aplicações web para gestão, operação, atendimento e relatórios.</p>
+        <ul class="list">
+          <li>Painel administrativo</li>
+          <li>Permissões por usuário</li>
+          <li>Relatórios e dashboards</li>
+          <li>Performance e segurança</li>
+        </ul>
+      </article>
 
-<section>
+      <article class="card">
+        <h3>Plataformas SaaS</h3>
+        <p>Sua ideia como produto: login, planos, cobrança e evolução contínua.</p>
+        <ul class="list">
+          <li>Multitenant (vários clientes)</li>
+          <li>Planos e assinaturas</li>
+          <li>Automação de onboarding</li>
+          <li>Escalabilidade</li>
+        </ul>
+      </article>
+    </div>
 
-<div class="container">
+    <div class="grid2" style="margin-top:22px;">
+      <article class="card">
+        <h3>Integração de APIs</h3>
+        <p>Integre pagamentos, ERPs, WhatsApp, e-commerce e ferramentas.</p>
+        <ul class="list">
+          <li>Gateways de pagamento</li>
+          <li>Webhooks e filas</li>
+          <li>Sincronização de dados</li>
+          <li>Logs e monitoramento</li>
+        </ul>
+      </article>
 
-<h1 class="section-title">Nossos Serviços</h1>
-
-<div class="grid">
-
-<div class="card">
-<h3>Desenvolvimento de Sistemas</h3>
-<p>Sistemas web personalizados para empresas.</p>
-</div>
-
-<div class="card">
-<h3>SaaS</h3>
-<p>Criação de softwares online escaláveis.</p>
-</div>
-
-<div class="card">
-<h3>Automação</h3>
-<p>Automação de processos empresariais.</p>
-</div>
-
-<div class="card">
-<h3>Integração de APIs</h3>
-<p>Integração com plataformas externas.</p>
-</div>
-
-</div>
-
-</div>
-
+      <article class="card">
+        <h3>Automação de Processos</h3>
+        <p>Menos planilhas, menos retrabalho, mais eficiência.</p>
+        <ul class="list">
+          <li>Fluxos automatizados</li>
+          <li>Validação de dados</li>
+          <li>Notificações e alertas</li>
+          <li>Integração com sistemas</li>
+        </ul>
+      </article>
+    </div>
+  </div>
 </section>
 
-<footer>
+<section class="cta">
+  <div class="container ctaBox">
+    <div>
+      <h3>Quer um orçamento rápido?</h3>
+      <p>Conte o que precisa e te retornamos com uma proposta.</p>
+    </div>
+    <a class="btnPrimary" href="contato.html">Solicitar proposta</a>
+  </div>
+</section>
+```
 
-<p>© 2026 Integralis Soluções</p>
+  </main>
 
-</footer>
-
+  <footer class="footer">
+    <div class="container footerInner">
+      <p>© <span id="y">2026</span> Integralis Soluções • Todos os direitos reservados</p>
+      <p class="muted">Soluções SaaS, sistemas e automação</p>
+    </div>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </footer>
 </body>
 </html>
