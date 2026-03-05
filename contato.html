@@ -21,7 +21,6 @@
   </span>
 </a>
 
-
   <nav class="menu" aria-label="Menu">
     <a class="menuLink" href="index.html">Início</a>
     <a class="menuLink" href="sobre.html">Sobre</a>
@@ -30,8 +29,6 @@
     <a class="menuBtn isActive" href="contato.html">Contato</a>
   </nav>
 </div>
-
-
   </header>
 
   <main>
@@ -42,73 +39,77 @@
       </div>
     </section>
 
+    <section class="section">
+      <div class="container">
+        <div class="grid2">
+          <div class="card">
+            <h3>Fale com a Integralis</h3>
+            <p class="muted">
+              Preencha o formulário ao lado ou utilize um dos canais abaixo.
+            </p>
 
-<section class="section">
-  <div class="container">
-    <div class="grid2">
-      <div class="card">
-        <h3>Fale com a Integralis</h3>
-        <p class="muted">
-          Preencha o formulário ao lado ou utilize um dos canais abaixo.
-        </p>
+            <div class="contactList">
+              <a class="contactItem waBtn"
+                 href="https://api.whatsapp.com/send?phone=5585991799849&text=Olá%20Integralis%20Soluções!%20Quero%20um%20orçamento."
+                 target="_blank"
+                 rel="noopener">
+                <span class="contactIcon" aria-hidden="true">💬</span>
+                <span>
+                  <strong>WhatsApp</strong><br>
+                  <small class="muted">Clique para conversar</small>
+                </span>
+              </a>
 
-        <div class="contactList">
-          <!-- Botão WhatsApp (na página contato) -->
-          <a class="contactItem waBtn"
-             href="https://api.whatsapp.com/send?phone=5585991799849&text=Olá%20Integralis%20Soluções!%20Quero%20um%20orçamento."
-             target="_blank"
-             rel="noopener">
-            <span class="contactIcon" aria-hidden="true">💬</span>
-            <span>
-              <strong>WhatsApp</strong><br>
-              <small class="muted">Clique para conversar</small>
-            </span>
-          </a>
+              <a class="contactItem" href="mailto:contato@integralissolucoes.com">
+                <span class="contactIcon" aria-hidden="true">✉️</span>
+                <span>
+                  <strong>Email</strong><br>
+                  <small class="muted">contato@integralissolucoes.com</small>
+                </span>
+              </a>
+            </div>
+          </div>
 
-          <a class="contactItem" href="mailto:contato@integralissolucoes.com">
-            <span class="contactIcon" aria-hidden="true">✉️</span>
-            <span>
-              <strong>Email</strong><br>
-              <small class="muted">contato@integralissolucoes.com</small>
-            </span>
-          </a>
+          <form class="card form"
+                action="https://formsubmit.co/totti.clash9@gmail.COM"
+                method="POST">
+
+            <input type="hidden" name="_subject" value="Novo lead - Integralis Soluções">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <!-- <input type="hidden" name="_next" value="https://seusite.com/obrigado.html"> -->
+
+            <h3>Solicitar proposta</h3>
+
+            <label class="field">
+              <span>Seu nome</span>
+              <input required name="nome" type="text" placeholder="Digite seu nome" />
+            </label>
+
+            <label class="field">
+              <span>Seu e-mail</span>
+              <input required name="email" type="email" placeholder="seuemail@exemplo.com" />
+            </label>
+
+            <label class="field">
+              <span>WhatsApp</span>
+              <input name="whatsapp" type="text" placeholder="(xx) xxxxx-xxxx" />
+            </label>
+
+            <label class="field">
+              <span>O que você precisa?</span>
+              <textarea required name="mensagem" rows="5" placeholder="Descreva sua ideia / sistema / SaaS..."></textarea>
+            </label>
+
+            <button class="btnPrimary" type="submit">Enviar</button>
+
+            <p class="muted tiny">
+              * Este formulário é um exemplo (HTML). Depois podemos ligar no WhatsApp, email ou backend.
+            </p>
+          </form>
         </div>
       </div>
-
-      <form class="card form" onsubmit="event.preventDefault(); alert('Mensagem enviada! (exemplo)');">
-        <h3>Solicitar proposta</h3>
-
-        <label class="field">
-          <span>Seu nome</span>
-          <input required type="text" placeholder="Digite seu nome" />
-        </label>
-
-        <label class="field">
-          <span>Seu e-mail</span>
-          <input required type="email" placeholder="seuemail@exemplo.com" />
-        </label>
-
-        <label class="field">
-          <span>WhatsApp</span>
-          <input type="text" placeholder="(xx) xxxxx-xxxx" />
-        </label>
-
-        <label class="field">
-          <span>O que você precisa?</span>
-          <textarea required rows="5" placeholder="Descreva sua ideia / sistema / SaaS..."></textarea>
-        </label>
-
-        <button class="btnPrimary" type="submit">Enviar</button>
-
-        <p class="muted tiny">
-          * Este formulário é um exemplo (HTML). Depois podemos ligar no WhatsApp, email ou backend.
-        </p>
-      </form>
-    </div>
-  </div>
-</section>
-
-
+    </section>
   </main>
 
   <footer class="footer">
