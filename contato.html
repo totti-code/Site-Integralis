@@ -1,62 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="pt-br">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contato - Integralis Soluções</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contato • Integralis Soluções</title>
 
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:," />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brandMark" aria-hidden="true"></span>
+        <span class="brandText">
+          <strong>INTEGRALIS</strong> <span>SOLUÇÕES</span>
+        </span>
+      </a>
 
-<header>
-
-<div class="container nav">
-
-<div class="logo">
-INTEGRALIS <span>SOLUÇÕES</span>
+```
+  <nav class="menu" aria-label="Menu">
+    <a class="menuLink" href="index.html">Início</a>
+    <a class="menuLink" href="sobre.html">Sobre</a>
+    <a class="menuLink" href="servicos.html">Serviços</a>
+    <a class="menuLink" href="portfolio.html">Portfólio</a>
+    <a class="menuBtn isActive" href="contato.html">Contato</a>
+  </nav>
 </div>
+```
 
-<nav>
-<a href="index.html">Início</a>
-<a href="sobre.html">Sobre</a>
-<a href="servicos.html">Serviços</a>
-<a href="portfolio.html">Portfólio</a>
-<a href="contato.html" class="btn">Contato</a>
-</nav>
+  </header>
 
-</div>
+  <main>
+    <section class="pageHero">
+      <div class="container">
+        <h1 class="pageTitle">Contato</h1>
+        <p class="pageSubtitle">Conte sobre seu projeto e receba um orçamento.</p>
+      </div>
+    </section>
 
-</header>
+```
+<section class="section">
+  <div class="container">
+    <div class="grid2">
+      <div class="card">
+        <h3>Fale com a Integralis</h3>
+        <p class="muted">
+          Preencha o formulário ao lado ou utilize um dos canais abaixo.
+        </p>
 
-<section>
+        <div class="contactList">
+          <a class="contactItem" href="#">
+            <span class="contactIcon" aria-hidden="true">💬</span>
+            <span>
+              <strong>WhatsApp</strong><br>
+              <small class="muted">Clique para conversar</small>
+            </span>
+          </a>
 
-<div class="container">
+          <a class="contactItem" href="mailto:contato@integralissolucoes.com">
+            <span class="contactIcon" aria-hidden="true">✉️</span>
+            <span>
+              <strong>Email</strong><br>
+              <small class="muted">contato@integralissolucoes.com</small>
+            </span>
+          </a>
+        </div>
+      </div>
 
-<h1 class="section-title">Contato</h1>
+      <form class="card form" onsubmit="event.preventDefault(); alert('Mensagem enviada! (exemplo)');">
+        <h3>Solicitar proposta</h3>
 
-<p class="center">
-Entre em contato para solicitar um orçamento ou tirar dúvidas.
-</p>
+        <label class="field">
+          <span>Seu nome</span>
+          <input required type="text" placeholder="Digite seu nome" />
+        </label>
 
-<div class="contact">
+        <label class="field">
+          <span>Seu e-mail</span>
+          <input required type="email" placeholder="seuemail@exemplo.com" />
+        </label>
 
-<a href="#">WhatsApp</a> <a href="#">Email</a>
+        <label class="field">
+          <span>WhatsApp</span>
+          <input type="text" placeholder="(xx) xxxxx-xxxx" />
+        </label>
 
-</div>
+        <label class="field">
+          <span>O que você precisa?</span>
+          <textarea required rows="5" placeholder="Descreva sua ideia / sistema / SaaS..."></textarea>
+        </label>
 
-</div>
+        <button class="btnPrimary" type="submit">Enviar</button>
 
+        <p class="muted tiny">
+          * Este formulário é um exemplo (HTML). Depois podemos ligar no WhatsApp, email ou backend.
+        </p>
+      </form>
+    </div>
+  </div>
 </section>
+```
 
-<footer>
+  </main>
 
-<p>© 2026 Integralis Soluções</p>
-
-</footer>
-
+  <footer class="footer">
+    <div class="container footerInner">
+      <p>© <span id="y">2026</span> Integralis Soluções • Todos os direitos reservados</p>
+      <p class="muted">Soluções SaaS, sistemas e automação</p>
+    </div>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </footer>
 </body>
 </html>
