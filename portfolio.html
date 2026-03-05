@@ -1,131 +1,109 @@
-faça meu codico de portfolio dps nos editamos
-
-Aqui está um exemplo simples de código para uma página de portfólio em HTML:
-
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="pt-br">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfólio • Integralis Soluções</title>
 
-<title>Portfólio | Integralis Soluções</title>
-
-<link rel="stylesheet" href="css/style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:," />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brandMark" aria-hidden="true"></span>
+        <span class="brandText">
+          <strong>INTEGRALIS</strong> <span>SOLUÇÕES</span>
+        </span>
+      </a>
 
-<header>
-
-<div class="container nav">
-
-<div class="logo">
-INTEGRALIS <span>SOLUÇÕES</span>
+```
+  <nav class="menu" aria-label="Menu">
+    <a class="menuLink" href="index.html">Início</a>
+    <a class="menuLink" href="sobre.html">Sobre</a>
+    <a class="menuLink" href="servicos.html">Serviços</a>
+    <a class="menuLink isActive" href="portfolio.html">Portfólio</a>
+    <a class="menuBtn" href="contato.html">Contato</a>
+  </nav>
 </div>
+```
 
-<nav>
-<a href="index.html">Início</a>
-<a href="sobre.html">Sobre</a>
-<a href="servicos.html">Serviços</a>
-<a href="portfolio.html">Portfólio</a>
-<a href="contato.html" class="btn">Contato</a>
-</nav>
+  </header>
 
-</div>
+  <main>
+    <section class="pageHero">
+      <div class="container">
+        <h1 class="pageTitle">Portfólio</h1>
+        <p class="pageSubtitle">
+          Alguns exemplos de soluções que a Integralis Soluções desenvolve.
+        </p>
+      </div>
+    </section>
 
-</header>
+```
+<section class="section">
+  <div class="container">
+    <div class="filters">
+      <span class="filterTag isOn">Todos</span>
+      <span class="filterTag">SaaS</span>
+      <span class="filterTag">Gestão</span>
+      <span class="filterTag">Automação</span>
+      <span class="filterTag">Dashboards</span>
+    </div>
 
-<section class="portfolio-hero">
+    <div class="grid3">
+      <article class="project">
+        <div class="projectThumb"></div>
+        <h3>Sistema de Gestão Empresarial</h3>
+        <p>Financeiro, clientes, relatórios e painéis para tomada de decisão.</p>
+        <div class="pillRow">
+          <span class="pill">Web</span>
+          <span class="pill">Gestão</span>
+          <span class="pill">Relatórios</span>
+        </div>
+        <a class="btnSmall" href="contato.html">Quero algo assim</a>
+      </article>
 
-<div class="container">
+      <article class="project">
+        <div class="projectThumb alt"></div>
+        <h3>Plataforma SaaS de Assinaturas</h3>
+        <p>Login, planos, cobrança e painel admin para vender seu software.</p>
+        <div class="pillRow">
+          <span class="pill">SaaS</span>
+          <span class="pill">Planos</span>
+          <span class="pill">Painel</span>
+        </div>
+        <a class="btnSmall" href="contato.html">Quero algo assim</a>
+      </article>
 
-<h1 class="section-title">Portfólio</h1>
+      <article class="project">
+        <div class="projectThumb"></div>
+        <h3>Sistema de Agendamentos</h3>
+        <p>Agenda, clientes, serviços e notificações automáticas.</p>
+        <div class="pillRow">
+          <span class="pill">Automação</span>
+          <span class="pill">Web</span>
+          <span class="pill">Produtividade</span>
+        </div>
+        <a class="btnSmall" href="contato.html">Quero algo assim</a>
+      </article>
 
-<p class="center">
-Conheça alguns tipos de soluções digitais desenvolvidas pela Integralis Soluções.
-</p>
+      <article class="project">
+        <div class="projectThumb alt"></div>
+        <h3>Dashboard de Indicadores</h3>
+        <p>Painéis com métricas, filtros, gráficos e exportações.</p>
+        <div class="pillRow">
+          <span class="pill">Dashboards</span>
+          <span class="pill">Dados</span>
+          <span class="pill">KPIs</span>
+        </div>
+        <a class="btnSmall" href="contato.html">Quero algo assim</a>
+      </article>
 
-</div>
-
-</section>
-
-<section class="portfolio">
-
-<div class="container">
-
-<div class="portfolio-grid">
-
-<div class="portfolio-card">
-
-<div class="portfolio-img"></div>
-
-<h3>Sistema de Gestão Empresarial</h3>
-
-<p>
-Sistema completo para controle financeiro, clientes, relatórios e gestão empresarial.
-</p>
-
-<a href="#">Ver projeto</a>
-
-</div>
-
-<div class="portfolio-card">
-
-<div class="portfolio-img"></div>
-
-<h3>Plataforma SaaS</h3>
-
-<p>
-Software online com login de usuários, painel administrativo e assinatura mensal.
-</p>
-
-<a href="#">Ver projeto</a>
-
-</div>
-
-<div class="portfolio-card">
-
-<div class="portfolio-img"></div>
-
-<h3>Sistema de Agendamentos</h3>
-
-<p>
-Plataforma para gestão de horários, clientes e serviços online.
-</p>
-
-<a href="#">Ver projeto</a>
-
-</div>
-
-<div class="portfolio-card">
-
-<div class="portfolio-img"></div>
-
-<h3>Dashboard de Dados</h3>
-
-<p>
-Painel inteligente para visualização de métricas e relatórios empresariais.
-</p>
-
-<a href="#">Ver projeto</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<p>© 2026 Integralis Soluções - Todos os direitos reservados</p>
-
-</footer>
-
-</body>
-</html>
+      <article class="project">
+        <div class="projectThumb"></d
+```
