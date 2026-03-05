@@ -410,3 +410,18 @@ flex-wrap:wrap;
 .pageTitle{font-size:34px;}
 .heroText h1{font-size:38px;}
 }
+.brandLogo{
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: var(--shadow2);
+  padding: 6px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
