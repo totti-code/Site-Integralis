@@ -128,18 +128,40 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(overlay);
   }
 
+  const menuLinks = menu.querySelectorAll("a");
+
   function closeMenu() {
     document.body.classList.remove("menuOpen");
     btn.setAttribute("aria-expanded", "false");
   }
 
-  function toggleMenu() {
-    const open = document.body.classList.toggle("menuOpen");
-    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  function openMenu() {
+    document.body.classList.add("menuOpen");
+    btn.setAttribute("aria-expanded", "true");
   }
 
-  btn.addEventListener("click", toggleMenu);
+  function toggleMenu() {
+    const isOpen = document.body.classList.contains("menuOpen");
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
   overlay.addEventListener("click", closeMenu);
+
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
