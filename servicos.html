@@ -1,4 +1,3 @@
-<!-- servicos.html -->
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -16,17 +15,13 @@
     <div class="container nav">
       <a class="brand" href="index.html">
         <img class="brandLogo" src="img/LOGOINTEGRALIS.png" alt="Integralis Soluções" />
-        <span class="brandText">
-          <strong>INTEGRALIS</strong> <span>SOLUÇÕES</span>
-        </span>
+        <span class="brandText"><strong>INTEGRALIS</strong> <span>SOLUÇÕES</span></span>
       </a>
 
-      <!-- Botão Hambúrguer (aparece só no mobile) -->
       <button class="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false">
         <span class="burger" aria-hidden="true"></span>
       </button>
 
-      <!-- Menu -->
       <nav class="menu" aria-label="Menu">
         <a class="menuLink" href="index.html">Início</a>
         <a class="menuLink" href="sobre.html">Sobre</a>
@@ -48,8 +43,6 @@
 
     <section class="section">
       <div class="container">
-
-        <!-- ✅ Agora com 4 serviços -->
         <div class="grid2">
           <article class="card">
             <h3>Website</h3>
@@ -84,12 +77,11 @@
             </ul>
           </article>
 
-          <!-- ✅ NOVO SERVIÇO -->
           <article class="card">
             <h3>Portfólio & Identidade</h3>
-            <p>Site de apresentação para pessoa, empresa ou pequeno negócio, com foco em identidade, credibilidade e presença online.</p>
+            <p>Site de apresentação para pessoa, empresa ou pequeno negócio, com foco em identidade e credibilidade.</p>
             <ul class="list">
-              <li>Site para portfólio pessoal/profissional</li>
+              <li>Portfólio pessoal/profissional</li>
               <li>Apresentação de marca e serviços</li>
               <li>Galeria de trabalhos e projetos</li>
               <li>Layout com identidade visual</li>
@@ -113,7 +105,6 @@
             <p>Seu portfólio e sua marca bem apresentados.</p>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -133,40 +124,38 @@
       <p>© <span id="y">2026</span> Integralis Soluções • Todos os direitos reservados</p>
       <p class="muted">Websites • One Page • E-commerce • Portfólio & Identidade</p>
     </div>
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
   </footer>
 
-  <!-- JS do menu hambúrguer -->
+  <!-- JS Hambúrguer -->
   <script>
-    (function(){
-      const btn = document.querySelector(".menuToggle");
-      const menu = document.querySelector(".menu");
-      if(!btn || !menu) return;
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector(".menuToggle");
+    const menu = document.querySelector(".menu");
+    if(!btn || !menu) return;
 
-      const overlay = document.createElement("div");
+    let overlay = document.querySelector(".menuOverlay");
+    if(!overlay){
+      overlay = document.createElement("div");
       overlay.className = "menuOverlay";
       document.body.appendChild(overlay);
+    }
 
-      function closeMenu(){
-        document.body.classList.remove("menuOpen");
-        btn.setAttribute("aria-expanded", "false");
-        btn.setAttribute("aria-label", "Abrir menu");
-      }
+    const closeMenu = () => {
+      document.body.classList.remove("menuOpen");
+      btn.setAttribute("aria-expanded","false");
+    };
 
-      function toggleMenu(){
-        const open = document.body.classList.toggle("menuOpen");
-        btn.setAttribute("aria-expanded", open ? "true" : "false");
-        btn.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
-      }
+    const toggleMenu = () => {
+      const open = document.body.classList.toggle("menuOpen");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    };
 
-      btn.addEventListener("click", toggleMenu);
-      overlay.addEventListener("click", closeMenu);
-
-      menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
-      document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeMenu(); });
-    })();
+    btn.addEventListener("click", toggleMenu);
+    overlay.addEventListener("click", closeMenu);
+    menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+    document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeMenu(); });
+  });
   </script>
 </body>
 </html>
