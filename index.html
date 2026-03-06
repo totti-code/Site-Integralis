@@ -9,7 +9,35 @@
   <link rel="icon" href="data:," />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".menuToggle");
+  const menu = document.querySelector(".menu");
+  if(!btn || !menu) return;
 
+  let overlay = document.querySelector(".menuOverlay");
+  if(!overlay){
+    overlay = document.createElement("div");
+    overlay.className = "menuOverlay";
+    document.body.appendChild(overlay);
+  }
+
+  const closeMenu = () => {
+    document.body.classList.remove("menuOpen");
+    btn.setAttribute("aria-expanded","false");
+  };
+
+  const toggleMenu = () => {
+    const open = document.body.classList.toggle("menuOpen");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+
+  btn.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", closeMenu);
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+  document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeMenu(); });
+});
+</script>
 <body>
   <header class="header">
     <div class="container nav">
