@@ -115,35 +115,36 @@
     <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
   </footer>
 
-  <!-- JS Hambúrguer -->
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.querySelector(".menuToggle");
-    const menu = document.querySelector(".menu");
-    if(!btn || !menu) return;
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".menuToggle");
+  const menu = document.querySelector(".menu");
+  if(!btn || !menu) return;
 
-    let overlay = document.querySelector(".menuOverlay");
-    if(!overlay){
-      overlay = document.createElement("div");
-      overlay.className = "menuOverlay";
-      document.body.appendChild(overlay);
-    }
+  let overlay = document.querySelector(".menuOverlay");
+  if(!overlay){
+    overlay = document.createElement("div");
+    overlay.className = "menuOverlay";
+    document.body.appendChild(overlay);
+  }
 
-    const closeMenu = () => {
-      document.body.classList.remove("menuOpen");
-      btn.setAttribute("aria-expanded","false");
-    };
+  function closeMenu(){
+    document.body.classList.remove("menuOpen");
+    btn.setAttribute("aria-expanded","false");
+  }
 
-    const toggleMenu = () => {
-      const open = document.body.classList.toggle("menuOpen");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-    };
+  function toggleMenu(){
+    const open = document.body.classList.toggle("menuOpen");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
 
-    btn.addEventListener("click", toggleMenu);
-    overlay.addEventListener("click", closeMenu);
-    menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
-    document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeMenu(); });
+  btn.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", closeMenu);
+
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape") closeMenu();
   });
-  </script>
+});
+</script>
 </body>
 </html>
