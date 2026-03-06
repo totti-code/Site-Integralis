@@ -427,3 +427,14 @@ input:focus,textarea:focus{
   body.menuOpen .burger::before{top:0;transform:rotate(45deg);}
   body.menuOpen .burger::after{top:0;transform:rotate(-45deg);}
 }
+body.menuOpen{
+  overflow:hidden;
+}
+
+@media (max-width:720px){
+  .menu a{
+    display:block;
+    width:100%;
+  }
+}
+
