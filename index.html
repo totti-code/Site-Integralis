@@ -91,13 +91,7 @@
 
           <article class="card">
             <h4>One Page</h4>
-            <p>Site profissional desenvolvido em uma única página, com navegação simples e todas as informações organizadas de forma clara e objetiva.</p>
-            <ul class="list">
-              <li>Apresentação do negócio, serviços ou produtos</li>
-              <li>Seções organizadas em uma única página com navegação fluida</li>
-              <li>Botão de contato ou WhatsApp integrado</li>
-              <li>Ideal para empresas que querem presença online rápida e profissional</li>
-            </ul>
+            <p>Rápida e focada em conversão com WhatsApp, formulário e oferta.</p>
           </article>
 
           <article class="card">
@@ -134,57 +128,57 @@
     </script>
   </footer>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.querySelector(".menuToggle");
-    const menu = document.querySelector(".menu");
-    if (!btn || !menu) return;
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".menuToggle");
+  const menu = document.querySelector(".menu");
+  if (!btn || !menu) return;
 
-    let overlay = document.querySelector(".menuOverlay");
-    if (!overlay) {
-      overlay = document.createElement("div");
-      overlay.className = "menuOverlay";
-      document.body.appendChild(overlay);
+  let overlay = document.querySelector(".menuOverlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.className = "menuOverlay";
+    document.body.appendChild(overlay);
+  }
+
+  const menuLinks = menu.querySelectorAll("a");
+
+  function closeMenu() {
+    document.body.classList.remove("menuOpen");
+    btn.setAttribute("aria-expanded", "false");
+  }
+
+  function openMenu() {
+    document.body.classList.add("menuOpen");
+    btn.setAttribute("aria-expanded", "true");
+  }
+
+  function toggleMenu() {
+    if (document.body.classList.contains("menuOpen")) {
+      closeMenu();
+    } else {
+      openMenu();
     }
+  }
 
-    const menuLinks = menu.querySelectorAll("a");
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleMenu();
+  });
 
-    function closeMenu() {
-      document.body.classList.remove("menuOpen");
-      btn.setAttribute("aria-expanded", "false");
-    }
+  overlay.addEventListener("click", closeMenu);
 
-    function openMenu() {
-      document.body.classList.add("menuOpen");
-      btn.setAttribute("aria-expanded", "true");
-    }
-
-    function toggleMenu() {
-      if (document.body.classList.contains("menuOpen")) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    }
-
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      toggleMenu();
-    });
-
-    overlay.addEventListener("click", closeMenu);
-
-    menuLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        closeMenu();
-      });
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      closeMenu();
     });
   });
-  </script>
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+});
+</script>
 </body>
 </html>
