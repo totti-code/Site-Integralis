@@ -33,7 +33,7 @@ a{color:inherit;text-decoration:none;}
 .header{
   position:sticky;
   top:0;
-  z-index:50;
+  z-index:120;
   background:rgba(255,255,255,.88);
   backdrop-filter:blur(10px);
   border-bottom:1px solid rgba(0,0,0,.06);
@@ -375,7 +375,7 @@ input:focus,textarea:focus{
   opacity:0;
   pointer-events:none;
   transition:opacity .2s ease;
-  z-index:80;
+  z-index:70;
 }
 
 @media (max-width:980px){
@@ -398,7 +398,7 @@ input:focus,textarea:focus{
     top:72px;
     right:16px;
     left:16px;
-    z-index:90;
+    z-index:130;
     display:none;
     flex-direction:column;
     gap:10px;
@@ -438,3 +438,9 @@ body.menuOpen{
   }
 }
 
+/* TESTE TEMPORÁRIO DO OVERLAY */
+/*
+.menuOverlay{
+  display:none !important;
+}
+*/
