@@ -8,25 +8,29 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="data:," />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<header class="header">
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <img class="brandLogo" src="img/LOGOINTEGRALIS.png" alt="Integralis Soluções" />
-      <span class="brandText"><strong>INTEGRALIS</strong> <span>SOLUÇÕES</span></span>
-    </a>
+</head>
 
-    <button class="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-      <span class="burger" aria-hidden="true"></span>
-    </button>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img class="brandLogo" src="img/LOGOINTEGRALIS.png" alt="Integralis Soluções" />
+        <span class="brandText"><strong>INTEGRALIS</strong> <span>SOLUÇÕES</span></span>
+      </a>
 
-    <nav class="menu" aria-label="Menu">
-      <a class="menuLink" href="index.html">Início</a>
-      <a class="menuLink" href="sobre.html">Sobre</a>
-      <a class="menuLink" href="servicos.html">Serviços</a>
-      <a class="menuBtn" href="contato.html">Contato</a>
-    </nav>
-  </div>
-</header>
+      <button class="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <span class="burger" aria-hidden="true"></span>
+      </button>
+
+      <nav class="menu" aria-label="Menu">
+        <a class="menuLink" href="index.html">Início</a>
+        <a class="menuLink isActive" href="sobre.html">Sobre</a>
+        <a class="menuLink" href="servicos.html">Serviços</a>
+        <a class="menuBtn" href="contato.html">Contato</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
     <section class="pageHero">
       <div class="container">
@@ -82,7 +86,7 @@
           <h3>Quer colocar sua ideia em prática?</h3>
           <p>Fale com a Integralis e vamos construir a melhor solução para seu negócio.</p>
         </div>
-        <a class="btnPrimary" href="/Site-Integralis/contato.html">Entrar em contato</a>
+        <a class="btnPrimary" href="contato.html">Entrar em contato</a>
       </div>
     </section>
   </main>
@@ -92,38 +96,40 @@
       <p>© <span id="y">2026</span> Integralis Soluções • Todos os direitos reservados</p>
       <p class="muted">Websites • One Page • E-commerce • Portfólio & Identidade</p>
     </div>
-    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
   </footer>
 
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector(".menuToggle");
-  const menu = document.querySelector(".menu");
-  if (!btn || !menu) return;
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.querySelector(".menuToggle");
+      const menu = document.querySelector(".menu");
+      if (!btn || !menu) return;
 
-  let overlay = document.querySelector(".menuOverlay");
-  if (!overlay) {
-    overlay = document.createElement("div");
-    overlay.className = "menuOverlay";
-    document.body.appendChild(overlay);
-  }
+      let overlay = document.querySelector(".menuOverlay");
+      if (!overlay) {
+        overlay = document.createElement("div");
+        overlay.className = "menuOverlay";
+        document.body.appendChild(overlay);
+      }
 
-  function closeMenu() {
-    document.body.classList.remove("menuOpen");
-    btn.setAttribute("aria-expanded", "false");
-  }
+      function closeMenu() {
+        document.body.classList.remove("menuOpen");
+        btn.setAttribute("aria-expanded", "false");
+      }
 
-  function toggleMenu() {
-    const open = document.body.classList.toggle("menuOpen");
-    btn.setAttribute("aria-expanded", open ? "true" : "false");
-  }
+      function toggleMenu() {
+        const open = document.body.classList.toggle("menuOpen");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      }
 
-  btn.addEventListener("click", toggleMenu);
-  overlay.addEventListener("click", closeMenu);
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-});
-</script>
+      btn.addEventListener("click", toggleMenu);
+      overlay.addEventListener("click", closeMenu);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+    });
+  </script>
 </body>
 </html>
