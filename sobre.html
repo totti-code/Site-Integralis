@@ -127,8 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function toggleMenu() {
-    const isOpen = document.body.classList.contains("menuOpen");
-    if (isOpen) {
+    if (document.body.classList.contains("menuOpen")) {
       closeMenu();
     } else {
       openMenu();
@@ -136,6 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   btn.addEventListener("click", (e) => {
+    e.preventDefault();
     e.stopPropagation();
     toggleMenu();
   });
