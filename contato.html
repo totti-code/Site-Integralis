@@ -115,7 +115,7 @@
     <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
   </footer>
 
-  <script>
+ <script>
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".menuToggle");
   const menu = document.querySelector(".menu");
@@ -141,8 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function toggleMenu() {
-    const isOpen = document.body.classList.contains("menuOpen");
-    if (isOpen) {
+    if (document.body.classList.contains("menuOpen")) {
       closeMenu();
     } else {
       openMenu();
@@ -150,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   btn.addEventListener("click", (e) => {
+    e.preventDefault();
     e.stopPropagation();
     toggleMenu();
   });
