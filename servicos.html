@@ -13,28 +13,28 @@
 
 <body>
   <header class="header">
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <img class="brandLogo" src="img/LOGOINTEGRALIS.png" alt="Integralis Soluções" />
-      <span class="brandText">
-        <strong>INTEGRALIS</strong> <span>SOLUÇÕES</span>
-      </span>
-    </a>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img class="brandLogo" src="img/LOGOINTEGRALIS.png" alt="Integralis Soluções" />
+        <span class="brandText">
+          <strong>INTEGRALIS</strong> <span>SOLUÇÕES</span>
+        </span>
+      </a>
 
-    <!-- Botão Hambúrguer (aparece só no mobile) -->
-    <button class="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-      <span class="burger" aria-hidden="true"></span>
-    </button>
+      <!-- Botão Hambúrguer (aparece só no mobile) -->
+      <button class="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <span class="burger" aria-hidden="true"></span>
+      </button>
 
-    <!-- Menu -->
-    <nav class="menu" aria-label="Menu">
-      <a class="menuLink" href="index.html">Início</a>
-      <a class="menuLink" href="sobre.html">Sobre</a>
-      <a class="menuLink" href="servicos.html">Serviços</a>
-      <a class="menuBtn" href="contato.html">Contato</a>
-    </nav>
-  </div>
-</header>
+      <!-- Menu -->
+      <nav class="menu" aria-label="Menu">
+        <a class="menuLink" href="index.html">Início</a>
+        <a class="menuLink" href="sobre.html">Sobre</a>
+        <a class="menuLink isActive" href="servicos.html">Serviços</a>
+        <a class="menuBtn" href="contato.html">Contato</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
     <section class="pageHero">
@@ -48,7 +48,9 @@
 
     <section class="section">
       <div class="container">
-        <div class="grid3">
+
+        <!-- ✅ Agora com 4 serviços -->
+        <div class="grid2">
           <article class="card">
             <h3>Website</h3>
             <p>Site institucional moderno para apresentar sua empresa com mais credibilidade e gerar novos contatos.</p>
@@ -81,6 +83,18 @@
               <li>Estrutura pronta para vendas online</li>
             </ul>
           </article>
+
+          <!-- ✅ NOVO SERVIÇO -->
+          <article class="card">
+            <h3>Portfólio & Identidade</h3>
+            <p>Site de apresentação para pessoa, empresa ou pequeno negócio, com foco em identidade, credibilidade e presença online.</p>
+            <ul class="list">
+              <li>Site para portfólio pessoal/profissional</li>
+              <li>Apresentação de marca e serviços</li>
+              <li>Galeria de trabalhos e projetos</li>
+              <li>Layout com identidade visual</li>
+            </ul>
+          </article>
         </div>
 
         <div class="spacer"></div>
@@ -95,10 +109,11 @@
             <p>Estrutura pensada para facilitar o atendimento.</p>
           </div>
           <div class="miniCard">
-            <h4>Presença online</h4>
-            <p>Sua marca mais forte, acessível e bem apresentada.</p>
+            <h4>Identidade forte</h4>
+            <p>Seu portfólio e sua marca bem apresentados.</p>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -116,11 +131,42 @@
   <footer class="footer">
     <div class="container footerInner">
       <p>© <span id="y">2026</span> Integralis Soluções • Todos os direitos reservados</p>
-      <p class="muted">Websites,One Page e E-commerce</p>
+      <p class="muted">Websites • One Page • E-commerce • Portfólio & Identidade</p>
     </div>
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();
     </script>
   </footer>
+
+  <!-- JS do menu hambúrguer -->
+  <script>
+    (function(){
+      const btn = document.querySelector(".menuToggle");
+      const menu = document.querySelector(".menu");
+      if(!btn || !menu) return;
+
+      const overlay = document.createElement("div");
+      overlay.className = "menuOverlay";
+      document.body.appendChild(overlay);
+
+      function closeMenu(){
+        document.body.classList.remove("menuOpen");
+        btn.setAttribute("aria-expanded", "false");
+        btn.setAttribute("aria-label", "Abrir menu");
+      }
+
+      function toggleMenu(){
+        const open = document.body.classList.toggle("menuOpen");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        btn.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+      }
+
+      btn.addEventListener("click", toggleMenu);
+      overlay.addEventListener("click", closeMenu);
+
+      menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+      document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeMenu(); });
+    })();
+  </script>
 </body>
 </html>
