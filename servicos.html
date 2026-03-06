@@ -128,56 +128,56 @@
   </footer>
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.querySelector(".menuToggle");
-    const menu = document.querySelector(".menu");
-    if (!btn || !menu) return;
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".menuToggle");
+  const menu = document.querySelector(".menu");
+  if (!btn || !menu) return;
 
-    let overlay = document.querySelector(".menuOverlay");
-    if (!overlay) {
-      overlay = document.createElement("div");
-      overlay.className = "menuOverlay";
-      document.body.appendChild(overlay);
+  let overlay = document.querySelector(".menuOverlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.className = "menuOverlay";
+    document.body.appendChild(overlay);
+  }
+
+  const menuLinks = menu.querySelectorAll("a");
+
+  function closeMenu() {
+    document.body.classList.remove("menuOpen");
+    btn.setAttribute("aria-expanded", "false");
+  }
+
+  function openMenu() {
+    document.body.classList.add("menuOpen");
+    btn.setAttribute("aria-expanded", "true");
+  }
+
+  function toggleMenu() {
+    if (document.body.classList.contains("menuOpen")) {
+      closeMenu();
+    } else {
+      openMenu();
     }
+  }
 
-    const menuLinks = menu.querySelectorAll("a");
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleMenu();
+  });
 
-    function closeMenu() {
-      document.body.classList.remove("menuOpen");
-      btn.setAttribute("aria-expanded", "false");
-    }
+  overlay.addEventListener("click", closeMenu);
 
-    function openMenu() {
-      document.body.classList.add("menuOpen");
-      btn.setAttribute("aria-expanded", "true");
-    }
-
-    function toggleMenu() {
-      const isOpen = document.body.classList.contains("menuOpen");
-      if (isOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    }
-
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      toggleMenu();
-    });
-
-    overlay.addEventListener("click", closeMenu);
-
-    menuLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        closeMenu();
-      });
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
+  menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      closeMenu();
     });
   });
-  </script>
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+});
+</script>
 </body>
 </html>
