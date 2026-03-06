@@ -531,3 +531,119 @@ input:focus,textarea:focus{
   .pageTitle{font-size:34px;}
   .heroText h1{font-size:38px;}
 }
+/* ===== MENU HAMBÚRGUER (Mobile) ===== */
+
+/* botão do menu (esconde no desktop) */
+.menuToggle{
+  display:none;
+  width:44px;
+  height:44px;
+  border:none;
+  background:#fff;
+  border-radius:14px;
+  box-shadow: var(--shadow2);
+  border:1px solid rgba(0,0,0,.06);
+  cursor:pointer;
+}
+
+/* ícone hambúrguer */
+.burger{
+  display:block;
+  width:20px;
+  height:2px;
+  background:#1d1d1f;
+  position:relative;
+  margin:auto;
+  border-radius:2px;
+}
+.burger::before,
+.burger::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:20px;
+  height:2px;
+  background:#1d1d1f;
+  border-radius:2px;
+  transition: transform .2s ease, top .2s ease, opacity .2s ease;
+}
+.burger::before{ top:-6px; }
+.burger::after{ top:6px; }
+
+/* overlay escuro */
+.menuOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.35);
+  backdrop-filter: blur(2px);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease;
+  z-index:80;
+}
+
+/* mobile layout */
+@media (max-width: 720px){
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+
+  .menuToggle{ display:inline-flex; align-items:center; justify-content:center; }
+
+  /* menu vira painel */
+  .menu{
+    position:fixed;
+    top:72px;
+    right:16px;
+    left:16px;
+    z-index:90;
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+
+    padding:14px;
+    background:rgba(255,255,255,.92);
+    border:1px solid rgba(0,0,0,.08);
+    border-radius:18px;
+    box-shadow: var(--shadow);
+
+    transform: translateY(-10px);
+    opacity:0;
+    pointer-events:none;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  .menuLink{
+    background:rgba(0,0,0,.04);
+    border:1px solid rgba(0,0,0,.06);
+    padding:12px 14px;
+    border-radius:14px;
+  }
+
+  .menuBtn{
+    width:100%;
+    text-align:center;
+    justify-content:center;
+    padding:12px 16px;
+  }
+
+  /* estado aberto */
+  body.menuOpen .menu{
+    transform: translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+  body.menuOpen .menuOverlay{
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  /* hambúrguer vira X */
+  body.menuOpen .burger{ background:transparent; }
+  body.menuOpen .burger::before{ top:0; transform:rotate(45deg); }
+  body.menuOpen .burger::after{ top:0; transform:rotate(-45deg); }
+}
