@@ -12,28 +12,24 @@
 
 <body>
   <header class="header">
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <img class="brandLogo" src="img/LOGOINTEGRALIS.png" alt="Integralis Soluções" />
-      <span class="brandText">
-        <strong>INTEGRALIS</strong> <span>SOLUÇÕES</span>
-      </span>
-    </a>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img class="brandLogo" src="img/LOGOINTEGRALIS.png" alt="Integralis Soluções" />
+        <span class="brandText"><strong>INTEGRALIS</strong> <span>SOLUÇÕES</span></span>
+      </a>
 
-    <!-- Botão Hambúrguer (aparece só no mobile) -->
-    <button class="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-      <span class="burger" aria-hidden="true"></span>
-    </button>
+      <button class="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <span class="burger" aria-hidden="true"></span>
+      </button>
 
-    <!-- Menu -->
-    <nav class="menu" aria-label="Menu">
-      <a class="menuLink" href="index.html">Início</a>
-      <a class="menuLink" href="sobre.html">Sobre</a>
-      <a class="menuLink" href="servicos.html">Serviços</a>
-      <a class="menuBtn" href="contato.html">Contato</a>
-    </nav>
-  </div>
-</header>
+      <nav class="menu" aria-label="Menu">
+        <a class="menuLink" href="index.html">Início</a>
+        <a class="menuLink isActive" href="sobre.html">Sobre</a>
+        <a class="menuLink" href="servicos.html">Serviços</a>
+        <a class="menuBtn" href="contato.html">Contato</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
     <section class="pageHero">
@@ -59,8 +55,8 @@
           <div class="card">
             <h3>Nosso propósito</h3>
             <p>
-              Transformar ideias em soluções digitais que facilitem o dia a dia, fortaleçam a marca e gerem novas oportunidades de negócio.
-              Nosso objetivo é simplificar processos,trazer mais segurança nas informações e contribuir para que nossos clientes tenham mais eficiência a reduzir perdas e organizar seus recebimentos.
+              Transformar ideias em soluções digitais que facilitem o dia a dia, fortaleçam a marca e gerem novas oportunidades.
+              Nosso objetivo é simplificar processos e contribuir para que nossos clientes tenham mais eficiência.
             </p>
           </div>
         </div>
@@ -74,11 +70,11 @@
           </div>
           <div class="miniCard">
             <h4>Qualidade</h4>
-            <p>Buscamos entregar páginas bem estruturadas, modernas e funcionais.</p>
+            <p>Entregamos páginas bem estruturadas, modernas e funcionais.</p>
           </div>
           <div class="miniCard">
             <h4>Confiança</h4>
-            <p>Queremos construir relações sólidas através de um trabalho sério e transparente.</p>
+            <p>Construímos relações sólidas com um trabalho sério e transparente.</p>
           </div>
         </div>
       </div>
@@ -98,11 +94,40 @@
   <footer class="footer">
     <div class="container footerInner">
       <p>© <span id="y">2026</span> Integralis Soluções • Todos os direitos reservados</p>
-      <p class="muted">Websites,One Page e E-commerce</p>
+      <p class="muted">Websites • One Page • E-commerce • Portfólio & Identidade</p>
     </div>
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
   </footer>
+
+  <!-- JS Hambúrguer -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector(".menuToggle");
+    const menu = document.querySelector(".menu");
+    if(!btn || !menu) return;
+
+    let overlay = document.querySelector(".menuOverlay");
+    if(!overlay){
+      overlay = document.createElement("div");
+      overlay.className = "menuOverlay";
+      document.body.appendChild(overlay);
+    }
+
+    const closeMenu = () => {
+      document.body.classList.remove("menuOpen");
+      btn.setAttribute("aria-expanded","false");
+    };
+
+    const toggleMenu = () => {
+      const open = document.body.classList.toggle("menuOpen");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+
+    btn.addEventListener("click", toggleMenu);
+    overlay.addEventListener("click", closeMenu);
+    menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+    document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeMenu(); });
+  });
+  </script>
 </body>
 </html>
