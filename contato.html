@@ -116,35 +116,34 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.querySelector(".menuToggle");
-      const menu = document.querySelector(".menu");
-      if (!btn || !menu) return;
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".menuToggle");
+  const menu = document.querySelector(".menu");
+  if (!btn || !menu) return;
 
-      let overlay = document.querySelector(".menuOverlay");
-      if (!overlay) {
-        overlay = document.createElement("div");
-        overlay.className = "menuOverlay";
-        document.body.appendChild(overlay);
-      }
+  let overlay = document.querySelector(".menuOverlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.className = "menuOverlay";
+    document.body.appendChild(overlay);
+  }
 
-      function closeMenu() {
-        document.body.classList.remove("menuOpen");
-        btn.setAttribute("aria-expanded", "false");
-      }
+  function closeMenu() {
+    document.body.classList.remove("menuOpen");
+    btn.setAttribute("aria-expanded", "false");
+  }
 
-      function toggleMenu() {
-        const open = document.body.classList.toggle("menuOpen");
-        btn.setAttribute("aria-expanded", open ? "true" : "false");
-      }
+  function toggleMenu() {
+    const open = document.body.classList.toggle("menuOpen");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
 
-      btn.addEventListener("click", toggleMenu);
-      overlay.addEventListener("click", closeMenu);
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeMenu();
-      });
-    });
-  </script>
+  btn.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", closeMenu);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+});
+</script>
 </body>
 </html>
